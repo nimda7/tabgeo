@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+include tabgeo/data/tabgeo_country_v4.dat
+
