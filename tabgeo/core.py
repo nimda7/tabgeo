@@ -1,4 +1,4 @@
-
+import os.path
 from struct import unpack
 
 
@@ -53,7 +53,7 @@ def tabgeo_bs(data_array, ip, step):
 
 def getbyip(ip):
     ip_ = map(int, ip.split('.'))
-    with open('./data/tabgeo_country_v4.dat', 'rb', 1) as fh:
+    with open(os.path.join(os.path.dirname(__file__), 'data/tabgeo_country_v4.dat'), 'rb', 1) as fh:
         fh.seek((ip_[0]*256 + ip_[1])*4)
         index_bin = fh.read(4)
         (i_offset, i_length) = unpack(">IB", b'\x00'+index_bin)
