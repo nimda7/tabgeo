@@ -12,7 +12,7 @@ def read(*parts):
     return codecs.open(os.path.join(here, *parts), 'r').read()
 
 
-PACKAGE_VERSION = '0.1'
+PACKAGE_VERSION = '0.2'
 
 setup(
     name='tabgeo',
