@@ -24,6 +24,7 @@ setup(
     license='GNU Affero General Public License v3',
     packages=find_packages(),
     zip_safe=False,
+    include_package_data=True,
     platforms='any',
     classifiers=[
         'Development Status :: 4 - Beta',
