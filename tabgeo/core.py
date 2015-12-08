@@ -33,7 +33,7 @@ def tabgeo_bs(data_array, ip, step):
     end = len(data_array) - 1
 
     while True:
-        mid = (start + end) / 2
+        mid = (start + end) // 2
 
         if step:
             (u['offset'], u['ip'], u['cc_id']) = unpack(">IBB", b'\x00'+data_array[mid])
@@ -52,7 +52,7 @@ def tabgeo_bs(data_array, ip, step):
 
 
 def getbyip(ip):
-    ip_ = map(int, ip.split('.'))
+    ip_ = list(map(int, ip.split('.')))
     with open(os.path.join(os.path.dirname(__file__), 'data/tabgeo_country_v4.dat'), 'rb', 1) as fh:
         fh.seek((ip_[0]*256 + ip_[1])*4)
         index_bin = fh.read(4)
