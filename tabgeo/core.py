@@ -38,7 +38,7 @@ def tabgeo_bs(data_array, ip, step):
         if step:
             (u['offset'], u['ip'], u['cc_id']) = unpack(">IBB", b'\x00'+data_array[mid])
         else:
-            (u['ip'], u['cc_id']) = unpack(">BB", b'\x00'+data_array[mid])
+            (u['ip'], u['cc_id']) = unpack(">BB", data_array[mid])
         if u['ip'] == ip:
             return u
         if end - start < 0:
